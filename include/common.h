@@ -13,5 +13,10 @@
 #include <string>
 #include <errno.h>
 #include <map>
+#include <sys/reg.h>
+
+#include <unistd.h>
+#include <time.h>
+#include <fstream>
 
 #endif // COMMON_H

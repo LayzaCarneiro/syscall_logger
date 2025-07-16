@@ -1,86 +1,184 @@
 [Timestamp] PID - Syscall (Arg1, Arg2, Arg3) = Return
-[2025-07-15 15:33:57.130] 21709 - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0xfffffffffffffffe
-[2025-07-15 15:33:57.131] 54cd - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0xfffffffffffffffe
-[2025-07-15 15:33:57.131] 54cd - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0xfffffffffffffffe
-[2025-07-15 15:33:57.131] 54cd - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0xfffffffffffffffe
-[2025-07-15 15:33:57.131] 54cd - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0xfffffffffffffffe
-[2025-07-15 15:33:57.131] 54cd - unknown (0x7ffff6dd0150, 0x7ffff6dd0830, 0x7ffff6dd0840) = 0x0
-[2025-07-15 15:33:57.131] 54cd - unknown (0x0, 0x0, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.131] 54cd - brk (0x0, 0x7ffd44a11f3c, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.131] 54cd - arch_prctl (0x3001, 0x7ffd44a11ef0, 0x78ce7a5e83c0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.131] 54cd - mmap (0x0, 0x2000, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.131] 54cd - access (0x78ce7a5f8d90, 0x4, 0x5beab6211ae8) = 0xffffffffffffffda
-[2025-07-15 15:33:57.131] 54cd - openat (0xffffff9c, 0x78ce7a5f721b, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - newfstatat (0x4, 0x78ce7a5f7ee9, 0x7ffd44a11040) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x0, 0x18ef7, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - close (0x4, 0x18ef7, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - openat (0xffffff9c, 0x78ce7a5c74b0, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - read (0x4, 0x7ffd44a11278, 0x340) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - newfstatat (0x4, 0x78ce7a5f7ee9, 0x7ffd44a11110) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x0, 0x2b608, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mprotect (0x78ce7a588000, 0x22000, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x78ce7a588000, 0x1a000, 0x5) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x78ce7a5a2000, 0x7000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x78ce7a5aa000, 0x2000, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - mmap (0x78ce7a5ac000, 0x1608, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - close (0x4, 0x0, 0x78ce7a582300) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - openat (0xffffff9c, 0x78ce7a5c79d0, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - read (0x4, 0x7ffd44a11258, 0x340) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - pread64 (0x4, 0x7ffd44a10e60, 0x310) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - pread64 (0x4, 0x7ffd44a10e20, 0x30) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - pread64 (0x4, 0x7ffd44a10dd0, 0x44) = 0xffffffffffffffda
-[2025-07-15 15:33:57.132] 54cd - newfstatat (0x4, 0x78ce7a5f7ee9, 0x7ffd44a110f0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - pread64 (0x4, 0x7ffd44a10d30, 0x310) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x0, 0x228e50, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mprotect (0x78ce7a228000, 0x1ee000, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a228000, 0x195000, 0x5) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a3bd000, 0x58000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a416000, 0x6000, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a41c000, 0xce50, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - close (0x4, 0x4, 0x78ce7a200380) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - openat (0xffffff9c, 0x78ce7a5c7ed0, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - read (0x4, 0x7ffd44a11238, 0x340) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - newfstatat (0x4, 0x78ce7a5f7ee9, 0x7ffd44a110d0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x0, 0x96310, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a4ed000, 0x6b000, 0x5) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a558000, 0x28000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x78ce7a580000, 0x2000, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - close (0x4, 0x0, 0x78ce7a4eb2c8) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - mmap (0x0, 0x2000, 0x3) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - arch_prctl (0x1002, 0x78ce7a4e9c40, 0xffff873185b159d0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - set_tid_address (0x78ce7a4e9f10, 0x78ce7a4e9c40, 0x78ce7a6040d8) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - unknown (0x78ce7a4e9f20, 0x18, 0x78ce7a6040d8) = 0xffffffffffffffda
-[2025-07-15 15:33:57.133] 54cd - rseq (0x78ce7a4ea5e0, 0x20, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - mprotect (0x78ce7a416000, 0x4000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - mprotect (0x78ce7a580000, 0x1000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - mprotect (0x78ce7a5aa000, 0x1000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - mprotect (0x5beab6211000, 0x1000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - mprotect (0x78ce7a601000, 0x2000, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - prlimit64 (0x0, 0x3, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - munmap (0x78ce7a5ae000, 0x18ef7, 0x78ce7a290c10) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - statfs (0x78ce7a5a22a0, 0x7ffd44a11f30, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - statfs (0x78ce7a5a22a7, 0x7ffd44a11f30, 0xfffffffffffffe98) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - getrandom (0x78ce7a4214d8, 0x8, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - brk (0x0, 0x78ce7a41ac80, 0x0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - brk (0x5beae4828000, 0x78ce7a41ac80, 0x78ce7a422218) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - openat (0xffffff9c, 0x78ce7a5a2284, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.134] 54cd - newfstatat (0x4, 0x78ce7a3d844f, 0x7ffd44a11df0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - read (0x4, 0x5beae4807500, 0x400) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - read (0x4, 0x5beae4807500, 0x400) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - close (0x4, 0xfbada418, 0x78ce7a416a00) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - access (0x78ce7a5a22c8, 0x0, 0x5beae4807) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - openat (0xffffff9c, 0x78ce7a3e1550, 0x80000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - newfstatat (0x4, 0x78ce7a3d844f, 0x78ce7a41bb80) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - mmap (0x0, 0x573a60, 0x1) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - close (0x4, 0x573a60, 0x2bab) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - unknown (0x1, 0x5401, 0x7ffd44a11e60) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - unknown (0x1, 0x5413, 0x7ffd44a11f50) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - openat (0xffffff9c, 0x5beae480ea60, 0x90800) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - newfstatat (0x4, 0x78ce7a3d844f, 0x7ffd44a11af0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - getdents64 (0x4, 0x5beae480eab0, 0x8000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - getdents64 (0x4, 0x5beae480eab0, 0x8000) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - close (0x4, 0x0, 0x78ce7a41ace0) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - newfstatat (0x1, 0x78ce7a3d844f, 0x7ffd44a0f960) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - write (0x1, 0x5beae4807500, 0x53) = 0xffffffffffffffda
-[2025-07-15 15:33:57.135] 54cd - close (0x1, 0x5beae4807500, 0x78ce7a416a00) = 0xffffffffffffffda
-[2025-07-15 15:33:57.136] 54cd - close (0x2, 0xfbad2006, 0x78ce7a416a00) = 0xffffffffffffffda
+[2025-07-16 15:18:24.313] 7092 - execve("/home/gesad03/.local/bin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/home/gesad03/.cargo/bin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/home/gesad03/.local/bin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/usr/local/sbin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/usr/local/bin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/usr/sbin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = -2 (0xfffffffffffffffe) [No such file or directory]
+[2025-07-16 15:18:24.313] 7092 - execve("/usr/bin/ls", "‰ŒÕÿ", "ŒŒÕÿ") = 0 (0x0)
+[2025-07-16 15:18:24.314] 7092 - execve(NULL, NULL, NULL) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - brk(0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - arch_prctl() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - access("/etc/ld.so.preload", 0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - openat(0xffffff9c, "/etc/ld.so.cache", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - newfstatat(0x4, "", 0x7ffe8d681b10, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.314] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - openat(0xffffff9c, "/lib/x86_64-linux-gnu/libselinux.so.1", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - read(0x4, "ELF", 0x340) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - newfstatat(0x4, "", 0x7ffe8d681be0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mprotect(0x77a18947e000, 0x22000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - openat(0xffffff9c, "/lib/x86_64-linux-gnu/libc.so.6", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - read(0x4, "ELF", 0x340) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - pread64(0x4, "", 0x310, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - pread64(0x4, "", 0x30, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - pread64(0x4, "", 0x44, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.315] 7092 - newfstatat(0x4, "", 0x7ffe8d681bc0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - pread64(0x4, "", 0x310, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mprotect(0x77a189228000, 0x1ee000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - openat(0xffffff9c, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.316] 7092 - read(0x4, "ELF", 0x340) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - newfstatat(0x4, "", 0x7ffe8d681ba0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - arch_prctl() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - set_tid_address(0x77a189476f10) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.317] 7092 - set_robust_list(0x77a189476f20, 0x18) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - rseq(0x77a1894775e0, 0x20, 0x0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - mprotect(0x77a189416000, 0x4000, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - mprotect(0x77a1891fe000, 0x1000, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - mprotect(0x77a1894a0000, 0x1000, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - mprotect(0x5eb2236a9000, 0x1000, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.318] 7092 - mprotect(0x77a1894f7000, 0x2000, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - prlimit64(0x0, 0x3, 0x0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - munmap(0x77a1894a4000, 0x18f88) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - statfs("/sys/fs/selinux", 0x7ffe8d682a00) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - statfs("/selinux", 0x7ffe8d682a00) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - getrandom("/TŒš*õc", 0x8, 0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - brk(0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - brk(0x5eb24e676000) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - openat(0xffffff9c, "/proc/filesystems", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - newfstatat(0x4, "", 0x7ffe8d6828c0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.319] 7092 - read(0x4, "nodev	sysfs
+nodev	tmpfs
+nodev	bdev
+nodev	proc
+nodev	cgroup
+nodev	cgroup2
+nodev	cpuset
+nodev	devtmpfs
+nodev	configfs
+nodev	debugfs
+nodev	tracefs
+nodev	securityfs
+nodev	sockfs
+nodev	bpf
+nodev	pipefs
+nodev	ramfs
+nodev	hugetlbfs
+nodev	devpts
+	ext3
+	ext2
+	ext4
+	squashfs
+	vfat
+nodev	ecryptfs
+	fuseblk
+nodev	fuse
+nodev	fusectl
+nodev	efivarfs
+nodev	mqueue
+nodev	resctrl
+nodev	pstore
+nodev	autofs
+nodev	binfmt_misc
+nodev	overlay
+", 0x400) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - read(0x4, "nodev	sysfs
+nodev	tmpfs
+nodev	bdev
+nodev	proc
+nodev	cgroup
+nodev	cgroup2
+nodev	cpuset
+nodev	devtmpfs
+nodev	configfs
+nodev	debugfs
+nodev	tracefs
+nodev	securityfs
+nodev	sockfs
+nodev	bpf
+nodev	pipefs
+nodev	ramfs
+nodev	hugetlbfs
+nodev	devpts
+	ext3
+	ext2
+	ext4
+	squashfs
+	vfat
+nodev	ecryptfs
+	fuseblk
+nodev	fuse
+nodev	fusectl
+nodev	efivarfs
+nodev	mqueue
+nodev	resctrl
+nodev	pstore
+nodev	autofs
+nodev	binfmt_misc
+nodev	overlay
+", 0x400) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - access("/etc/selinux/config", 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - openat(0xffffff9c, "/usr/lib/locale/locale-archive", 0x80000, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - newfstatat(0x4, "", 0x77a18941bb80, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - mmap() = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.320] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - ioctl(0x1, 0x5401, 0x7ffe8d682930) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - ioctl(0x1, 0x5413, 0x7ffe8d682a20) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - openat(0xffffff9c, ".", 0x90800, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - newfstatat(0x4, "", 0x7ffe8d6825c0, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - getdents64(0x4, 0x5eb24e65cab0, 0x8000) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - getdents64(0x4, 0x5eb24e65cab0, 0x8000) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - close(0x4) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - newfstatat(0x1, "", 0x7ffe8d680430, 0x0) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.321] 7092 - write(0x1, "CMakeCache.txt	CMakeFiles  cmake_install.cmake  LTracer  Makefile  syscall_log.csv
+et
+nodev	devtmpfs
+nodev	configfs
+nodev	debugfs
+nodev	tracefs
+nodev	securityfs
+nodev	sockfs
+nodev	bpf
+nodev	pipefs
+nodev	ramfs
+nodev	hugetlbfs
+nodev	devpts
+	ext3
+	ext2
+	ext4
+	squashfs
+	vfat
+nodev	ecryptfs
+	fuseblk
+nodev	fuse
+nodev	fusectl
+nodev	efivarfs
+nodev	mqueue
+nodev	resctrl
+nodev	pstore
+nodev	autofs
+nodev	binfmt_misc
+nodev	overlay
+", 0x53) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.322] 7092 - close(0x1) = -38 (0xffffffffffffffda) [Function not implemented]
+[2025-07-16 15:18:24.322] 7092 - close(0x2) = -38 (0xffffffffffffffda) [Function not implemented]
