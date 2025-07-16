@@ -12,5 +12,5 @@ include_directories(
 
 add_executable(LTracer
         src/main.cpp
-        Utils/SyscallMap.cpp
+        utils/SyscallMap.cpp
 )

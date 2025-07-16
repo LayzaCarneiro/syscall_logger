@@ -12,5 +12,6 @@
 #include <cstring>
 #include <string>
 #include <errno.h>
+#include <map>
 
 #endif // COMMON_H
