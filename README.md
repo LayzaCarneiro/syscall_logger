@@ -1,4 +1,4 @@
-## 📦 Compilação
+## Compilação
 
 Este projeto usa CMake.
 
@@ -13,7 +13,7 @@ make
 
 O executável será gerado como `./LTracer`.
 
-## ▶️ Uso
+## Uso
 
 ```bash
 ./LTracer <comando>
@@ -22,7 +22,7 @@ O executável será gerado como `./LTracer`.
 Exemplo:
 
 ```bash
-./LTracer ls -l /home
+./LTracer ls -ls
 ```
 
-Isso executará `ls -l /home` e imprimirá as syscalls chamadas durante a execução.
+Isso executará `ls -ls` e imprimirá as syscalls chamadas durante a execução.
