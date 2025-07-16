@@ -22,7 +22,7 @@ O executável será gerado como `./LTracer`.
 Exemplo:
 
 ```bash
-./LTracer ls -ls
+./LTracer ls
 ```
 
-Isso executará `ls -ls` e imprimirá as syscalls chamadas durante a execução.
+Isso executará `ls` e imprimirá as syscalls chamadas durante a execução.
