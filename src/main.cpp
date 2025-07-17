@@ -1,6 +1,11 @@
 #include "../include/common.h"
 #include "../include/syscalls.h"
 
+#define COLOR_RESET     "\033[0m"
+#define COLOR_GRAY      "\033[90m"
+#define COLOR_BOLD      "\033[1m"
+#define COLOR_YELLOW    "\033[33m"
+
 #include <sstream>
 
 std::string current_timestamp() {
@@ -37,6 +42,14 @@ std::string read_string_from_pid(pid_t pid, unsigned long addr) {
     return result;
 }
 
+bool is_readable_string_syscall_arg(long syscall_num, int arg_index) {
+    // Ex: execve(0)
+    if (syscall_num == SYS_execve && arg_index == 0) return true;
+    if (syscall_num == SYS_openat && arg_index == 1) return true;
+    if (syscall_num == SYS_open && arg_index == 0) return true;
+    if (syscall_num == SYS_write && arg_index == 1) return true;
+    return false;
+}
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
@@ -49,6 +62,7 @@ int main(int argc, char* argv[]) {
     std::cout << "[Timestamp] PID - Syscall (Arg1, Arg2, Arg3) = Return\n";
 
     pid_t child = fork();
+
     if (child == 0) {
         ptrace(PTRACE_TRACEME, 0, nullptr, nullptr);
         kill(getpid(), SIGSTOP);
@@ -56,7 +70,7 @@ int main(int argc, char* argv[]) {
         perror("execvp");
         return 1;
     } else {
-        int status;
+        int status, retval;
         struct user_regs_struct regs;
         bool entering = true;
         waitpid(child, &status, 0);
@@ -72,19 +86,10 @@ int main(int argc, char* argv[]) {
                 long syscall_num = regs.orig_rax;
                 std::string syscall_name = Syscall::get_syscall_name(syscall_num);
 
-                // if (syscall_name == "open" || syscall_name == "execve") {
-                //     std::string arg1 = read_string_from_pid(child, regs.rdi);
-                //     line << "\"" << arg1 << "\", ";
-                // } else {
-                //     line << "0x" << std::hex << regs.rdi << ", ";
-                // }
-
-                // line << "0x" << std::hex << regs.rsi << ", ";
-                // line << "0x" << std::hex << regs.rdx << ") = ";
-
                 std::ostringstream line;
-                line << "[" << current_timestamp() << "] ";
-                line << child << " - " << syscall_name << "(";
+                line << COLOR_GRAY << "[" << current_timestamp() << "]" << COLOR_RESET;
+                line << " PID:" << child << " - ";
+                line << COLOR_BOLD << COLOR_YELLOW << syscall_name << COLOR_RESET << "(";
 
                 if ( Syscall::syscall_map.find(syscall_num) !=  Syscall::syscall_map.end()) {
                     const auto& info = Syscall::syscall_map.at(syscall_num);
@@ -100,7 +105,7 @@ int main(int argc, char* argv[]) {
                             case 2: arg = regs.rdx; break;
                         }
 
-                        if (type.find("char") != std::string::npos) {
+                        if (type.find("char") != std::string::npos && is_readable_string_syscall_arg(syscall_num, i)) {
                             if (arg == 0) {
                                 line << "NULL";
                             } else {
@@ -121,16 +126,16 @@ int main(int argc, char* argv[]) {
 
                 line << ") = ";
 
+                retval = ptrace(PTRACE_PEEKUSER, child, sizeof(long)*RAX, 0);
                 logfile << line.str();
                 std::cout << line.str();
 
             } else {
                 std::ostringstream ret_line;
-                long retorno = (long)regs.rax;
 
-                ret_line << retorno << " (0x" << std::hex << regs.rax << ")";
-                if (retorno < 0) {
-                    ret_line << " [" << strerror(-retorno) << "]";
+                ret_line << retval;
+                if (retval < 0) {
+                    ret_line << " [" << strerror(-retval) << "]";
                 }
                 ret_line << std::endl;
 
