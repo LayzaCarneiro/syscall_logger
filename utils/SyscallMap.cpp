@@ -1,6 +1,18 @@
-#include "../include/common.h"
 #include "syscalls.h"
 namespace Syscall {
+
+/**
+ * @brief Map que associa números inteiros das chamadas de sistema a suas informações.
+ * 
+ * Cada entrada do mapa possui como chave o número da syscall e como valor uma estrutura SyscallInfo,
+ * que contém:
+ * - o nome da syscall,
+ * - a quantidade de argumentos que ela recebe,
+ * - um vetor com os tipos (em string) dos argumentos.
+ * 
+ * Este map é utilizado para traduzir números de chamadas de sistema para seus nomes e
+ * para auxiliar na análise dos argumentos durante o trace.
+ */
 
 const std::unordered_map<int, SyscallInfo> syscall_map = {
     { 0, { "read", 3, { "unsigned int", "char __user *", "size_t" } } },
@@ -369,9 +381,18 @@ const std::unordered_map<int, SyscallInfo> syscall_map = {
     { 467, { "open_tree_attr", 5, { "int", "const char __user *", "unsigned", "struct mount_attr __user *", "size_t" } } },
 };
 
+/**
+ * @brief Retorna o nome da syscall dado seu número.
+ * 
+ * Procura o número da syscall no mapa `syscall_map`.
+ * Se encontrado, retorna o nome correspondente; caso contrário, retorna "unknown".
+ * 
+ * @param syscall_num Número inteiro da syscall.
+ * @return std::string Nome da syscall ou "unknown" se não encontrado.
+ */
 std::string get_syscall_name(long syscall_num) {
     auto it = syscall_map.find(syscall_num);
     return it != syscall_map.end() ? it->second.name : "unknown";
 }
 
-}
+}  // namespace Syscall
