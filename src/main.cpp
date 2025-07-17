@@ -96,38 +96,55 @@ bool is_readable_string_syscall_arg(long syscall_num, int arg_index) {
     return false;
 }
 
+
+/**
+ * Função principal que rastreia syscalls de um processo filho.
+ * Utiliza ptrace para capturar entrada e saída de chamadas do sistema.
+ */
 int main(int argc, char* argv[]) {
+
+    // Verifica se o usuário passou um comando para rastrear
     if (argc < 2) {
         std::cerr << "Uso: " << argv[0] << " <comando>\n";
         return 1;
     }
 
+    // Abre arquivo de log e imprime cabeçalho
     std::ofstream logfile("syscall_log.csv");
     logfile << "[Timestamp] PID - Syscall (Arg1, Arg2, Arg3) = Return\n";
     std::cout << "[Timestamp] PID - Syscall (Arg1, Arg2, Arg3) = Return\n";
 
+    // Cria um processo filho
     pid_t child = fork();
 
     if (child == 0) {
+        // Processo filho: solicita rastreamento via ptrace
         ptrace(PTRACE_TRACEME, 0, nullptr, nullptr);
-        kill(getpid(), SIGSTOP);
+        kill(getpid(), SIGSTOP);    // pausa até que o pai esteja pronto
+
+        // Executa o comando fornecido
         execvp(argv[1], &argv[1]);
+
         perror("execvp");
         return 1;
     } else {
+        // Processo pai: inicia o rastreamento
         int status, retval;
         struct user_regs_struct regs;
-        bool entering = true;
-        waitpid(child, &status, 0);
-        ptrace(PTRACE_SYSCALL, child, nullptr, nullptr);
+        bool entering = true;   // alterna entre entrada e saída da syscall
 
+        waitpid(child, &status, 0);     // espera o filho parar
+        ptrace(PTRACE_SYSCALL, child, nullptr, nullptr);    // inicia rastreamento
+
+        // Loop principal de rastreamento
         while (true) {
-            waitpid(child, &status, 0);
-            if (WIFEXITED(status)) break;
+            waitpid(child, &status, 0);     
+            if (WIFEXITED(status)) break;   // filho terminou
 
-            ptrace(PTRACE_GETREGS, child, nullptr, &regs);
+            ptrace(PTRACE_GETREGS, child, nullptr, &regs);  // coleta registradores
 
             if (entering) {
+                // --- ENTRADA DA SYSCALL ---
                 long syscall_num = regs.orig_rax;
                 std::string syscall_name = Syscall::get_syscall_name(syscall_num);
 
@@ -136,6 +153,7 @@ int main(int argc, char* argv[]) {
                 line << " PID:" << child << " - ";
                 line << COLOR_BOLD << COLOR_YELLOW << syscall_name << COLOR_RESET << "(";
 
+                // Verifica se temos metadados da syscall
                 if ( Syscall::syscall_map.find(syscall_num) !=  Syscall::syscall_map.end()) {
                     const auto& info = Syscall::syscall_map.at(syscall_num);
                     int real_arg_count = std::min(info.arg_count, static_cast<int>(info.args.size()));
@@ -144,12 +162,15 @@ int main(int argc, char* argv[]) {
                         std::string type = info.args[i];
 
                         unsigned long arg = 0;
+
+                        // Coleta argumentos correspondente
                         switch (i) {
                             case 0: arg = regs.rdi; break;
                             case 1: arg = regs.rsi; break;
                             case 2: arg = regs.rdx; break;
                         }
 
+                        // Se o argumento é uma string legível
                         if (type.find("char") != std::string::npos && is_readable_string_syscall_arg(syscall_num, i)) {
                             if (arg == 0) {
                                 line << "NULL";
@@ -162,6 +183,7 @@ int main(int argc, char* argv[]) {
                                 }
                             }
                         } else {
+                            // Caso contrário, exibe em hexadecimal
                             line << "0x" << std::hex << arg;
                         }
 
@@ -171,14 +193,20 @@ int main(int argc, char* argv[]) {
 
                 line << ") = ";
 
+                // Pega valor de retorno antecipadamente
                 retval = ptrace(PTRACE_PEEKUSER, child, sizeof(long)*RAX, 0);
+
+                // Imprime linha sem o valor de retorno ainda
                 logfile << line.str();
                 std::cout << line.str();
 
             } else {
+                // --- SAÍDA DA SYSCALL ---
                 std::ostringstream ret_line;
 
                 ret_line << retval;
+
+                // Se valor de retorno for negativo, é erro
                 if (retval < 0) {
                     ret_line << " [" << strerror(-retval) << "]";
                 }
@@ -188,11 +216,14 @@ int main(int argc, char* argv[]) {
                 std::cout  << ret_line.str();            
             }
 
+            // Alterna entre entrada e saída
             entering = !entering;
+
+            // Continua para próxima syscall
             ptrace(PTRACE_SYSCALL, child, nullptr, nullptr);
         }
 
-        logfile.close();
+        logfile.close();    // fecha arquivo de lo
     }
 
     return 0;
